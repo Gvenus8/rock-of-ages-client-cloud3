@@ -37,7 +37,7 @@ jobs:
         working-directory: terraform
         run: terraform apply -auto-approve
 
-            - name: Export Terraform Outputs
+      - name: Export Terraform Outputs
         working-directory: terraform
         run: |
           echo "S3_BUCKET_NAME=$(terraform output -raw s3_bucket_name 2>/dev/null)" >> $GITHUB_ENV
